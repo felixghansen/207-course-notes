@@ -21,7 +21,18 @@ public class DigitSum {
      * @return the sum of its decimal digits
      */
     public static int digitSum(int n) {
-        // TODO: complete
-        return 0;
+        int sumSoFar = 0;
+
+        // if we start by taking the absolute value of n, if n is Integer.MIN_VALUE then nothing will happen
+        // and it stays Integer.MIN_VALUE
+
+        while (n != 0) {
+            int digit = Math.abs(n % 10);
+            n /= 10;
+
+            sumSoFar += digit;
+        }
+
+        return sumSoFar;
     }
 }
